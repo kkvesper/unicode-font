@@ -1,0 +1,27 @@
+#!/usr/bin/env fontforge -script
+
+migmix_reg  = "src/migmix-2p-regular.ttf"
+migmix_bold = "src/migmix-2p-bold.ttf"
+
+unicode_reg  = "src/arial-unicode-regular.ttf"
+unicode_bold = "src/arial-unicode-bold.ttf"
+
+output_reg  = "migmix-2p-unicode-regular.ttf"
+output_bold = "migmix-2p-unicode-bold.ttf"
+
+basename = "MigMix-2P-Unicode"
+family = "MigMix 2P Unicode"
+
+Open(migmix_reg);
+ScaleToEm(2048);
+MergeFonts(unicode_reg);
+SetFontNames(basename + "-Regular", family, family + " Regular", "Regular", "")
+Generate(output_reg, "", 4)
+Close()
+
+Open(migmix_bold);
+ScaleToEm(2048);
+MergeFonts(unicode_bold);
+SetFontNames(basename + "-Bold", family, family + " Bold", "Bold", "")
+Generate(output_bold, "", 4)
+Close()
